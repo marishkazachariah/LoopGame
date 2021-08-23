@@ -25,3 +25,8 @@ a:visited {
 a:hover {
   color: #E95847;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
