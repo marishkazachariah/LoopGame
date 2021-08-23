@@ -7,20 +7,20 @@ class Game {
     this.timer = new Timer();
   }
 
+  preload() {
+    this.background.image = loadImage("../assets/background/bg-room.png");
+    // figure out how to load images
+    // this.background.image = loadImage('../assets/background/bg-room.png');
+  }
+
   setup() {
     //background(255);
     // image
   }
 
-  preload() {
-    // for images later
-    // figure out how to load images
-    // this.background.image = loadImage('../assets/background/photo2.jpg');
-  }
-
   draw() {
     clear();
-    background(255);    // gets updated per frame 
+    this.background.draw();
     this.timer.draw();
   }
 }
