@@ -7,7 +7,7 @@ class Timer {
     // textAlign(CENTER, CENTER); // use for game over screen
     textSize(14);
     textFont("VT323"); // Referencing Google Font via font name
-  
+    fill(0, 0, 0);
     let timer = this.timer, minutes, seconds;
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
