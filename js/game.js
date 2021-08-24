@@ -4,6 +4,7 @@ class Game {
     // Declare countdown timer variables
     this.timer = new Timer();
     this.obstacles = new Obstacles();
+    this.colliders = [];
     // this.player = new Player();
     // this.enemy = new Enemy();
   }
@@ -13,14 +14,16 @@ class Game {
   }
 
   setup() {
-    //background(255);
-    // image
+    for (let i = 0; i < 5; i++) {
+      this.colliders.push(new Obstacles());
+      console.log(this.colliders.length);
+    }
   }
 
   draw() {
     clear();
     this.background.draw();
     this.timer.draw();
-    this.obstacles.draw();
+    this.obstacles.display();
   }
 }
