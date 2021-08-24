@@ -1,12 +1,12 @@
 class Timer {
   constructor() {
     this.timer = 60 * 2;
+    this.ui = new Ui();
   }
 
   draw() {
-    // textAlign(CENTER, CENTER); // use for game over screen
     textSize(14);
-    textFont("VT323"); // Referencing Google Font via font name
+    textFont('VT323'); // Referencing Google Font via font name
     fill(0, 0, 0);
     let timer = this.timer, minutes, seconds;
     minutes = parseInt(timer / 60, 10);
@@ -21,7 +21,10 @@ class Timer {
         this.timer --;
       }
     if (this.timer <= 0) {
-      console.log('Game over');
+      // console.log('Game over');
+      this.ui.gameOver();
+      this.ui.button();
+      // TODO: stop timer/constant update + add button functionality 
     }
   }
 }

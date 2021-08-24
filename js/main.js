@@ -5,8 +5,7 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(400, 400);
-	game.setup();  
+	createCanvas(400, 400);  
 }
 
 function draw() {

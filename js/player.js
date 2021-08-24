@@ -1,6 +1,5 @@
 class Player {
   constructor() {
-    this.image;
     this.x = 160;
     this.y = 120;
     this.width = 48;
@@ -9,7 +8,7 @@ class Player {
   }
 
   draw() {
-    image(this.image, this.x, this.y, this.width, this.height);
+    image(game.playerImage, this.x, this.y, this.width, this.height);
   }
 
   moveRight() {
@@ -28,3 +27,4 @@ class Player {
     this.y += this.speed;
   }
 }
+
