@@ -5,17 +5,20 @@ class Game {
     this.timer = new Timer();
     this.obstacles = new Obstacles();
     this.player = new Player();
-    // this.enemy = new Enemy();
+    this.enemy = new Enemy();
   }
 
   preload() {
     this.backgroundImage = loadImage('../assets/background/bg-room.png');
     this.playerImage = loadImage('../assets/player/player.png');
+    this.enemyImage = loadImage('../assets/enemy/enemy.png');
     // load ui
     this.startScreenImage = loadImage('../assets/ui/screen-start.png');
     this.gameOverImage = loadImage('../assets/ui/screen-lose.png');
     this.winImage = loadImage('../assets/ui/screen-win.png');
     this.buttonImage = loadImage('../assets/ui/button-bg.png');
+    // interactable(s)
+    // this.windowImage
   }
 
   draw() {
