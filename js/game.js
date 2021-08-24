@@ -5,16 +5,17 @@ class Game {
     this.timer = new Timer();
     this.obstacles = new Obstacles();
     this.colliders = [];
-    // this.player = new Player();
+    this.player = new Player();
     // this.enemy = new Enemy();
   }
 
   preload() {
-    this.background.image = loadImage("../assets/background/bg-room.png");
+    this.background.image = loadImage('../assets/background/bg-room.png');
+    this.player.image = loadImage('../assets/player/player.png');
   }
 
   setup() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       this.colliders.push(new Obstacles());
       console.log(this.colliders.length);
     }
@@ -25,5 +26,6 @@ class Game {
     this.background.draw();
     this.timer.draw();
     this.obstacles.display();
+    this.player.draw();
   }
 }
