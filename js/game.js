@@ -6,6 +6,7 @@ class Game {
     this.obstacles = new Obstacles();
     this.player = new Player();
     this.enemy = new Enemy();
+    this.interactable = new Interactable();
   }
 
   preload() {
@@ -18,21 +19,25 @@ class Game {
     this.winImage = loadImage('../assets/ui/screen-win.png');
     this.buttonImage = loadImage('../assets/ui/button-bg.png');
     // interactable(s)
-    // this.windowImage
+    this.windowOpenImageLayer0 = loadImage('../assets/interactables/window-open.png');
+    this.windowOpenImageLayer1 = loadImage('../assets/interactables/window-open-frame.png');
+    this.windowClosedImage = loadImage('../assets/interactables/window-closed.png');
   }
 
   draw() {
     clear();
     this.background.draw();
     this.obstacles.draw();
-    this.player.draw();
     this.timer.draw();
-
+    this.player.draw();
     // player hits boundary at bottom of the screen
     if(this.player.y > 323) {
       this.player.y = this.player.y - this.player.speed;
     }
-
+    this.interactable.openWindowOutsideDisplay();
+    this.interactable.openWindowFrameDisplay();
+    this.timer.enemyAppear(this.enemy);
+    setTimeout(this.interactable.openWindowFrameDisplay(), 2000);
     // player hits collider boxes
     //this.obstacles.collision(this.player, this.obstacles.bedsideX, this.obstacles.bedsideY, this.obstacles.bedsideWidth, this.obstacles.bedsideHeight);
     // if (obstacle.collision(this.player) || (obstacle.x + obstacle.width) < 0) {

@@ -20,11 +20,19 @@ class Timer {
     if (frameCount % 60 == 0 && this.timer > 0) { 
         this.timer --;
       }
+    // Game over if timer is up
     if (this.timer <= 0) {
-      // console.log('Game over');
       this.ui.gameOver();
       this.ui.button();
-      // TODO: stop timer/constant update + add button functionality 
+      // stop timer/constant update + add button functionality
+      noLoop(); 
+    }
+  }
+
+  enemyAppear(enemy) {
+    if(this.timer <= 118) {
+      // console.log('enemy appears');
+      enemy.draw();
     }
   }
 }
