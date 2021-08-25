@@ -10,18 +10,18 @@ class Game {
   }
 
   preload() {
-    this.backgroundImage = loadImage('./assets/background/bg-room.png');
-    this.playerImage = loadImage('./assets/player/player.png');
-    this.enemyImage = loadImage('./assets/enemy/enemy.png');
+    this.backgroundImage = loadImage('/assets/background/bg-room.png');
+    this.playerImage = loadImage('/assets/player/player.png');
+    this.enemyImage = loadImage('/assets/enemy/enemy.png');
     // load ui
-    this.startScreenImage = loadImage('./assets/ui/screen-start.png');
-    this.gameOverImage = loadImage('./assets/ui/screen-lose.png');
-    this.winImage = loadImage('./assets/ui/screen-win.png');
-    this.buttonImage = loadImage('./assets/ui/button-bg.png');
+    this.startScreenImage = loadImage('/assets/ui/screen-start.png');
+    this.gameOverImage = loadImage('/assets/ui/screen-lose.png');
+    this.winImage = loadImage('/assets/ui/screen-win.png');
+    this.buttonImage = loadImage('/assets/ui/button-bg.png');
     // interactable(s)
-    this.windowOpenImageLayer0 = loadImage('./assets/interactables/window-open.png');
-    this.windowOpenImageLayer1 = loadImage('./assets/interactables/window-open-frame.png');
-    this.windowClosedImage = loadImage('./assets/interactables/window-closed.png');
+    this.windowOpenImageLayer0 = loadImage('/assets/interactables/window-open.png');
+    this.windowOpenImageLayer1 = loadImage('/assets/interactables/window-open-frame.png');
+    this.windowClosedImage = loadImage('/assets/interactables/window-closed.png');
   }
 
   draw() {
