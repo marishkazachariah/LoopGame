@@ -36,16 +36,6 @@ class Ui {
         text("You Win!", this.textX, this.textY);
         this.instructions('Press R to Replay Game');
     } 
-    
-    // change to keyboard instructions?
-    startButton() {
-        // image(game.buttonImage, 150, 235, 92, 48);
-        // this.button = image(game.buttonImage, 150, 235, 92, 48);
-        let button = createImg(game.buttonImage, "button");
-        button.position(150, 235);
-        button.mousePressed(this.restartGame);
-        this.instructions('Press Enter to Start Game');
-    }
 
     instructions(instructions) {;
         textSize(20);

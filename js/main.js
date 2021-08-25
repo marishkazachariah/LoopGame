@@ -25,6 +25,9 @@ function keyPressed() {
     if(keyCode === 38 || keyCode == 87) {
         game.player.moveUp();
     }
+    if(keyCode === 82) {
+        location.reload();
+    }
 }
 
 // Resizing canvas function

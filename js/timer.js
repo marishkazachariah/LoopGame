@@ -27,7 +27,6 @@ class Timer {
 
   enemyAppear(enemy) {
     if(this.timer <= 118) {
-      // console.log('enemy appears');
       enemy.draw();
     }
   }

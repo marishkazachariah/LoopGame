@@ -1,47 +1,84 @@
 class Obstacles { 
   constructor() {
-    this.roomColliders = []
-    this.totalColliders = [];
-    // walls
-    // alarm clock table
-    // dresser
+
     // bedside area
     this.bedsideX = 235;
     this.bedsideY = 100;
     this.bedsideWidth = 48;
     this.bedsideHeight = 118;
     // bookshelf
+    this.bookshelfX = 337;
+    this.bookshelfY = 250;
+    this.bookshelfWidth = 55;
+    this.bookshelfHeight = 130;
+    // alarm clock table
+    this.tableX = 40;
+    this.tableY = 111;
+    this.tableWidth = 44;
+    this.tableHeight = 62;
+    // dresser
+    this.dresserX = 286;
+    this.dresserY = 63;
+    this.dresserWidth = 74;
+    this.dresserHeight = 120;
+    // wall left
+    this.wallLX = 20;
+    this.wallLY = 106;
+    this.wallLWidth = 20;
+    this.wallLHeight = 293;
+    // wall right
+    this.wallRX = 360;
+    this.wallRY = 106;
+    this.wallRWidth = 20;
+    this.wallRHeight = 293;
+    // wall top
+    this.wallTX = 20;
+    this.wallTY = 100;
+    this.wallTWidth = 218;
+    this.wallTHeight = 20;
   }
 
-  setup() {
-    noStroke();
-    fill(0, 0, 255, 60);
-  }
   draw() {
-    // collider for alarm clock
-    fill(0, 0, 255, 60);
+    
+    fill(0, 0, 0, 60);
     noStroke();
-    rect(40, 111, 44, 62);
-    // collider for bed
-    // rect(127, 89, 120, 145);
-    // collider for beside area
     rect(this.bedsideX, this.bedsideY, this.bedsideWidth, this.bedsideHeight);
-    // collider for dresser
-    rect(286, 63, 74, 120);
-    // collider for bookshelf
-    rect(337, 250, 55, 130);
-    // wall colliders 
-    rect(360, 106, 20, 293);
-    rect(20, 106, 20, 293);
-    rect(20, 99, 218, 20);
+    rect(this.dresserX, this.dresserY, this.dresserWidth, this.dresserHeight);
+    rect(this.bookshelfX, this.bookshelfY, this.bookshelfWidth, this.bookshelfHeight);
+    rect(this.wallRX, this.wallRY, this.wallRWidth, this.wallRHeight);
+    rect(this.wallLX, this.wallLY, this.wallLWidth, this.wallLHeight);
+    rect(this.wallTX, this.wallTY, this.wallTWidth, this.wallTHeight);
+    
+    // issue: only one of the colliders work
+    if(game.player.x > this.bookshelfX - this.bookshelfWidth - 35 && game.player.x < this.bookshelfX + this.bookshelfWidth + 35 && game.player.y > this.bookshelfY - this.bookshelfHeight - 35 && game.player.y < this.bookshelfY + this.bookshelfHeight + 35) {
+      game.player.speed = game.player.speed * -1; 
+    } else {
+      game.player.speed = 8;
+    }
+    if(game.player.x > this.dresserX - this.dresserWidth - 5 && game.player.x < this.dresserX + this.dresserWidth + 5 && game.player.y > this.dresserY - this.dresserHeight - 5 && game.player.y < this.dresserY + this.dresserHeight + 5) {
+      game.player.speed = game.player.speed * -1; 
+    } else {
+      game.player.speed = 8;
+    }
+    // if(game.player.x > this.wallRX - this.wallRWidth - 5 && game.player.x < this.wallRX + this.wallRWidth + 5 && game.player.y > this.wallRY - this.wallRHeight - 5 && game.player.y < this.wallRY + this.wallRHeight + 5) {
+    //   game.player.speed = game.player.speed * -1; 
+    // } else {
+    //   game.player.speed = 8;
+    // }
+    // this.collision(game.player, this.bedsideX, this.bedsideY, this.bedsideWidth, this.bedsideY);
+    // this.collision(game.player, this.dresserX, this.dresserY, this.dresserWidth, this.dresserHeight);
+    // this.collision(game.player, this.bookshelfX, this.bookshelfY, this.bookshelfWidth, this.bookshelfHeight);
+    // this.collision(game.player, this.wallRX, this.wallRY, this.wallRWidth, this.wallRHeight);
+    // this.collision(game.player, this.wallLX, this.wallLY, this.wallLWidth, this.wallLHeight);
+    // this.collision(game.player, this.wallTX, this.wallTY, this.wallTWidth, this.wallTHeight);
 
   }
 
-  // collision(playerInfo, colX, colY, colWidth, colHeight) {
-  //   if(playerInfo.x > colX - colWidth - 35 && playerInfo.x < colx + colWidth + 35 && playerInfo.y > coly - colHeight - 35 && playerInfo.y < colY + colHeight + 35) {
-  //     return playerInfo.speed = playerInfo.speed * -1; 
-  //   } else {
-  //     return playerInfo.speed = 8;
-  //   }
-  // }
+  collision(playerInfo, colX, colY, colWidth, colHeight) {
+    if(playerInfo.x > colX - colWidth - 20 && playerInfo.x < colX + colWidth + 20 && playerInfo.y > colY - colHeight - 20 && playerInfo.y < colY + colHeight + 20) {
+      playerInfo.speed = playerInfo.speed * -1; 
+    } else {
+      playerInfo.speed = 8;
+    }
+  }
 }
