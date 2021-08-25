@@ -9,6 +9,10 @@ class Player {
 
   draw() {
     image(game.playerImage, this.x, this.y, this.width, this.height);
+    // player hits boundary at bottom of the screen
+    if(this.y > 323) {
+      this.y = this.y - this.speed;
+    }
   }
 
   moveRight() {

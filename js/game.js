@@ -30,10 +30,6 @@ class Game {
     this.obstacles.draw();
     this.timer.draw();
     this.player.draw();
-    // player hits boundary at bottom of the screen
-    if(this.player.y > 323) {
-      this.player.y = this.player.y - this.player.speed;
-    }
     this.interactable.openWindowOutsideDisplay();
     this.interactable.openWindowFrameDisplay();
     this.timer.enemyAppear(this.enemy);
