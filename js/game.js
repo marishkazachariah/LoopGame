@@ -7,6 +7,7 @@ class Game {
     this.player = new Player();
     this.enemy = new Enemy();
     this.interactable = new Interactable();
+    this.ui = new Ui();
   }
 
   preload() {
@@ -41,5 +42,29 @@ class Game {
     // } else {
     //   return true
     // }
+
+    // enemy and player collision
+    this.collision(this.player);
+  }
+  // collide with player character to game over
+  collision(playerInfo) {
+    let enemyX = this.enemy.x + this.enemy.width / 2;
+    let enemyY = this.enemy.y + this.enemy.height / 2;
+
+    // get the middle of the player
+    let playerX = playerInfo.x + playerInfo.width / 2;
+    let playerY = playerInfo.y + playerInfo.height / 2;
+
+    if (dist(enemyX, enemyY, playerX, playerY) > 25) {
+        // console.log('meow');
+    } else {
+        // here we have a collision
+        this.gameOver();
+    }
+  }
+
+  gameOver() {
+    this.ui.gameOver();
+    noLoop();
   }
 }

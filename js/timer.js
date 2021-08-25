@@ -1,7 +1,6 @@
 class Timer {
   constructor() {
     this.timer = 60 * 2;
-    this.ui = new Ui();
   }
 
   draw() {
@@ -22,10 +21,7 @@ class Timer {
       }
     // Game over if timer is up
     if (this.timer <= 0) {
-      this.ui.gameOver();
-      this.ui.button();
-      // stop timer/constant update + add button functionality
-      noLoop(); 
+      game.gameOver();
     }
   }
 

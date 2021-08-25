@@ -37,18 +37,11 @@ class Obstacles {
 
   }
 
-  collision(playerInfo, colX, colY, colWidth, colHeight) {
-    if(playerInfo.x > colX - colWidth - 35 && playerInfo.x < colx + colWidth + 35 && playerInfo.y > coly - colHeight - 35 && playerInfo.y < colY + colHeight + 35) {
-      return playerInfo.speed = playerInfo.speed * -1; 
-    } else {
-      return playerInfo.speed = 8;
-    }
-  }
-  // collision(playerInfo, obstacleX, obsctacleY) {
-  //   let collisionX =  + obstacleX / 2;
-	// 	let collisionY = obsctacleY + this.height / 2;
-	// 	// get the middle of the player
-	// 	let playerX = playerInfo.x + playerInfo.width / 2;
-	// 	let playerY = playerInfo.y + playerInfo.height / 2;
+  // collision(playerInfo, colX, colY, colWidth, colHeight) {
+  //   if(playerInfo.x > colX - colWidth - 35 && playerInfo.x < colx + colWidth + 35 && playerInfo.y > coly - colHeight - 35 && playerInfo.y < colY + colHeight + 35) {
+  //     return playerInfo.speed = playerInfo.speed * -1; 
+  //   } else {
+  //     return playerInfo.speed = 8;
+  //   }
   // }
 }

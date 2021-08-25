@@ -17,18 +17,22 @@ class Enemy {
         this.x += cos(rotation) * this.speed;
         this.y += sin(rotation) * this.speed;
 
+        // stays within canvas bounds
         if(this.x >= 300 || this.x <= 10) {
-            // this.x = this.x - this.speed;
             this.speed *= -1;
             this.x += cos(rotation) * this.speed;
             this.y += sin(rotation) * this.speed;
         }
         if(this.y >= 300 || this.y <= 0) {
-            // this.x = this.x - this.speed;
             this.speed *= -1;
             this.x += cos(rotation) * this.speed;
             this.y += sin(rotation) * this.speed;
-        }
-        // collide with player character to game over
+        }     
+        // this.collision(game.player);
+        // if (this.collision(game.player) || (this.x + this.width) < 0) {
+        //     return false;
+        // } else {
+        //     return true;
+        // }
     }
 }
