@@ -5,7 +5,6 @@ class Enemy {
         this.width = 44;
         this.height = 83;
         this.speed = 1;
-        // this.rotation = atan2(game.player.y - this.y, game.player.x - this.y);
     }
 
     draw() {
