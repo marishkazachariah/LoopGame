@@ -11,7 +11,9 @@ function setup() {
 }
 
 function draw() {
-  game.draw();
+    if(game.hasStarted) {
+        game.draw()
+    }
 }
 
 function keyPressed() {
@@ -29,6 +31,10 @@ function keyPressed() {
   }
   if (keyCode === 82) {
     location.reload();
+  }
+  if (keyCode === 13) {
+    game.hasStarted = true;
+    game.startMusic();
   }
   if (keyCode === 27 || keyCode === 81) {
     alert("You can't just simply 'escape' :~)");

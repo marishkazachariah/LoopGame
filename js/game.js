@@ -10,6 +10,7 @@ class Game {
     this.isWindowClosed = false;
     this.isKnifeGrabbable = false;
     this.hasKnife = false;
+    this.hasStarted = false;
   }
 
   preload() {
@@ -49,8 +50,9 @@ class Game {
     this.isKnifeGrabbable = false;
     this.hasStarted = false;
     this.background.draw();
+    this.interactable.openWindowOutsideDisplay();
+    this.interactable.openWindowFrameDisplay();
     this.ui.startScreen();
-    this.music.play();
   }
 
   draw() {
@@ -123,5 +125,9 @@ class Game {
     this.winSound.play();
     this.music.stop();
     noLoop();
+  }
+
+  startMusic() {
+    this.music.play();
   }
 }

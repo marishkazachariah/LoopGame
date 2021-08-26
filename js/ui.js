@@ -36,7 +36,6 @@ class Ui {
     text(instructions, 115, 230);
   }
 
-  // Start Screen not yet implemented
   startScreen() {
     image(game.startScreenImage, this.x, this.y, this.width, this.height);
     textSize(20);
