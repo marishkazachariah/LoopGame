@@ -10,16 +10,16 @@ class Player {
   draw() {
     image(game.playerImage, this.x, this.y, this.width, this.height);
     // player hits boundary at walls of the room
-    if(this.x < 50) {
+    if (this.x < 50) {
       this.x = this.x + this.speed;
     }
-    if(this.x > 320) {
+    if (this.x > 320) {
       this.x = this.x - this.speed;
     }
-    if(this.y > 323) {
+    if (this.y > 323) {
       this.y = this.y - this.speed;
     }
-    if(this.y < 50) {
+    if (this.y < 50) {
       this.y = this.y + this.speed;
     }
   }
@@ -40,4 +40,3 @@ class Player {
     this.y += this.speed;
   }
 }
-

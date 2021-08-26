@@ -1,13 +1,15 @@
 class Timer {
   constructor() {
-    this.timer = 60 * 2;
+    this.timer = 60 * 1;
   }
 
   draw() {
     textSize(14);
-    textFont('VT323'); // Referencing Google Font via font name
+    textFont("VT323"); // Referencing Google Font via font name
     fill(0, 0, 0);
-    let timer = this.timer, minutes, seconds;
+    let timer = this.timer,
+      minutes,
+      seconds;
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
 
@@ -16,28 +18,28 @@ class Timer {
     // display time on screen
     text(minutes + ":" + seconds, 50, 135);
     // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
-    if (frameCount % 60 == 0 && this.timer > 0) { 
-        this.timer --;
-      }
+    if (frameCount % 60 == 0 && this.timer > 0) {
+      this.timer--;
+    }
     // Game over if timer is up
-    if (this.timer <= 0) {
+    if (this.timer === 0) {
       game.gameOver();
     }
   }
 
   enemyAppear(enemy) {
-    if(game.isWindowClosed) {
-      if(this.timer <= 100) {
+    if (game.isWindowClosed) {
+      if (this.timer <= 45) {
         enemy.draw();
         enemy.enemyCollision(game.player);
         game.knockingSound.stop();
         game.isWindowClosed = false;
         game.windowOpenSound.play();
-        if (this.time <= 98) {
+        if (this.time <= 43) {
           game.windowOpenSound.stop();
         }
       }
-    } else if(this.timer <= 110) {
+    } else if (this.timer <= 50) {
       game.windowOpen();
       enemy.draw();
       enemy.enemyCollision(game.player);

@@ -1,6 +1,7 @@
-class Obstacles { 
+// Keeping this here to highlight the process I was going through the
+// process of adding environmental colliders
+class Obstacles {
   constructor() {
-
     // bedside area
     this.bedsideX = 235;
     this.bedsideY = 100;
@@ -39,35 +40,29 @@ class Obstacles {
   }
 
   draw() {
-    
     fill(0, 0, 0, 60);
     noStroke();
     rect(this.bedsideX, this.bedsideY, this.bedsideWidth, this.bedsideHeight);
     rect(this.dresserX, this.dresserY, this.dresserWidth, this.dresserHeight);
-    rect(this.bookshelfX, this.bookshelfY, this.bookshelfWidth, this.bookshelfHeight);
+    rect(
+      this.bookshelfX,
+      this.bookshelfY,
+      this.bookshelfWidth,
+      this.bookshelfHeight
+    );
     rect(this.wallRX, this.wallRY, this.wallRWidth, this.wallRHeight);
     rect(this.wallLX, this.wallLY, this.wallLWidth, this.wallLHeight);
     rect(this.wallTX, this.wallTY, this.wallTWidth, this.wallTHeight);
-    
-    // issue: only one of the colliders work
-    // the if statement below is the one that works best
-    // if(game.player.x > this.bookshelfX - this.bookshelfWidth && game.player.x < this.bookshelfX + this.bookshelfWidth && game.player.y > this.bookshelfY - this.bookshelfHeight && game.player.y < this.bookshelfY + this.bookshelfHeight ) {
-    //   game.player.speed = game.player.speed * -1; 
-    // } else {
-    //   game.player.speed = 8;
-    // }
-  
-    // this.collision(game.player, this.bedsideX, this.bedsideY, this.bedsideWidth, this.bedsideY);
-    // this.collision(game.player, this.dresserX, this.dresserY, this.dresserWidth, this.dresserHeight);
-    // this.collision(game.player, this.bookshelfX, this.bookshelfY, this.bookshelfWidth, this.bookshelfHeight);
-    // this.collision(game.player, this.wallRX, this.wallRY, this.wallRWidth, this.wallRHeight);
-    // this.collision(game.player, this.wallLX, this.wallLY, this.wallLWidth, this.wallLHeight);
-    // this.collision(game.player, this.wallTX, this.wallTY, this.wallTWidth, this.wallTHeight);
   }
 
   collision(playerInfo, colX, colY, colWidth, colHeight) {
-    if(playerInfo.x > colX - colWidth - 20 && playerInfo.x < colX + colWidth + 20 && playerInfo.y > colY - colHeight - 20 && playerInfo.y < colY + colHeight + 20) {
-      playerInfo.speed = playerInfo.speed * -1; 
+    if (
+      playerInfo.x > colX - colWidth - 20 &&
+      playerInfo.x < colX + colWidth + 20 &&
+      playerInfo.y > colY - colHeight - 20 &&
+      playerInfo.y < colY + colHeight + 20
+    ) {
+      playerInfo.speed = playerInfo.speed * -1;
     } else {
       playerInfo.speed = 8;
     }
