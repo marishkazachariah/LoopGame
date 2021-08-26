@@ -32,9 +32,8 @@ class Timer {
         enemy.enemyCollision(game.player);
         game.knockingSound.stop();
         game.isWindowClosed = false;
-        if(this.time === 100) {
-          game.windowOpenSound.play();
-        } else if (this.time <= 98){
+        game.windowOpenSound.play();
+        if (this.time <= 98) {
           game.windowOpenSound.stop();
         }
       }

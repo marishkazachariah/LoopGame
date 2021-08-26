@@ -47,8 +47,6 @@ class Game {
     this.timer.draw();
     this.player.draw();
 
-    this.timer.enemyAppear(this.enemy);
-    
     this.windowCollision(this.player);
     if(this.isWindowClosed) {
       this.windowOpenImageLayer1.resize(0,0);
@@ -57,6 +55,8 @@ class Game {
       this.windowClosedImage.resize(0, 0);
       this.windowOpen();
     }
+    
+    this.timer.enemyAppear(this.enemy);
   }
 
   // made separate collision classes for interactacles
@@ -81,10 +81,6 @@ class Game {
     this.windowOpenImageLayer1.resize(this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
     this.windowOpenImageLayer0.resize(this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
   } 
-
-  delayWindowOpenSound() {
-
-  }
 
   gameOver() {
     this.ui.gameOver();
