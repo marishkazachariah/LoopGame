@@ -50,16 +50,16 @@ class Obstacles {
     rect(this.wallTX, this.wallTY, this.wallTWidth, this.wallTHeight);
     
     // issue: only one of the colliders work
-    if(game.player.x > this.bookshelfX - this.bookshelfWidth - 35 && game.player.x < this.bookshelfX + this.bookshelfWidth + 35 && game.player.y > this.bookshelfY - this.bookshelfHeight - 35 && game.player.y < this.bookshelfY + this.bookshelfHeight + 35) {
-      game.player.speed = game.player.speed * -1; 
-    } else {
-      game.player.speed = 8;
-    }
-    if(game.player.x > this.dresserX - this.dresserWidth - 5 && game.player.x < this.dresserX + this.dresserWidth + 5 && game.player.y > this.dresserY - this.dresserHeight - 5 && game.player.y < this.dresserY + this.dresserHeight + 5) {
-      game.player.speed = game.player.speed * -1; 
-    } else {
-      game.player.speed = 8;
-    }
+    // if(game.player.x > this.bookshelfX - this.bookshelfWidth - 35 && game.player.x < this.bookshelfX + this.bookshelfWidth + 35 && game.player.y > this.bookshelfY - this.bookshelfHeight - 35 && game.player.y < this.bookshelfY + this.bookshelfHeight + 35) {
+    //   game.player.speed = game.player.speed * -1; 
+    // } else {
+    //   game.player.speed = 8;
+    // }
+    // if(game.player.x > this.dresserX - this.dresserWidth - 5 && game.player.x < this.dresserX + this.dresserWidth + 5 && game.player.y > this.dresserY - this.dresserHeight - 5 && game.player.y < this.dresserY + this.dresserHeight + 5) {
+    //   game.player.speed = game.player.speed * -1; 
+    // } else {
+    //   game.player.speed = 8;
+    // }
     // if(game.player.x > this.wallRX - this.wallRWidth - 5 && game.player.x < this.wallRX + this.wallRWidth + 5 && game.player.y > this.wallRY - this.wallRHeight - 5 && game.player.y < this.wallRY + this.wallRHeight + 5) {
     //   game.player.speed = game.player.speed * -1; 
     // } else {

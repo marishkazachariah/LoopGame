@@ -1,11 +1,13 @@
 const game = new Game();
 
 function preload() {
+    soundFormats('mp3', 'wav');
 	game.preload();
 }
 
 function setup() {
 	createCanvas(400, 400);  
+    game.setup();
 }
 
 function draw() {

@@ -23,8 +23,17 @@ class Game {
     this.windowOpenImageLayer0 = loadImage('assets/interactables/window-open.png');
     this.windowOpenImageLayer1 = loadImage('assets/interactables/window-open-frame.png');
     this.windowClosedImage = loadImage('assets/interactables/window-closed.png');
+
+    // load music
+    this.music = loadSound('assets/music/day-15.mp3');
+    this.gameOverSound = loadSound('assets/music/game-over-sound.wav');
+    this.winSound = loadSound('assets/music/win-sound.wav');
   }
 
+  setup() {
+    // this.music.play();
+  }
+  
   draw() {
     clear();
     this.background.draw();
@@ -35,17 +44,13 @@ class Game {
     this.interactable.openWindowFrameDisplay();
     this.timer.enemyAppear(this.enemy);
     setTimeout(this.interactable.openWindowFrameDisplay(), 2000);
-    // player hits collider boxes
-    //this.obstacles.collision(this.player, this.obstacles.bedsideX, this.obstacles.bedsideY, this.obstacles.bedsideWidth, this.obstacles.bedsideHeight);
-    // if (obstacle.collision(this.player) || (obstacle.x + obstacle.width) < 0) {
-    //   return false
-    // } else {
-    //   return true
-    // }
 
+    // player hits collider boxes
+    
     // enemy and player collision
     this.collision(this.player);
   }
+
   // collide with player character to game over
   collision(playerInfo) {
     let enemyX = this.enemy.x + this.enemy.width / 2;
@@ -60,11 +65,20 @@ class Game {
     } else {
         // here we have a collision
         this.gameOver();
+        this.music.stop();
     }
   }
+  
 
   gameOver() {
     this.ui.gameOver();
+    this.gameOverSound.play();
+    noLoop();
+  }
+
+  winState() {
+    this.ui.win();
+    this.winSound.play();
     noLoop();
   }
 }
