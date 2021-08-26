@@ -47,10 +47,11 @@ class Game {
     this.timer.draw();
     this.player.draw();
 
+    // Window interactable to change the initial core loop
     this.windowCollision(this.player);
     if(this.isWindowClosed) {
       this.windowOpenImageLayer1.resize(0,0);
-      image(this.windowClosedImage, this.interactable.x, this.interactable.y, this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
+      image(this.windowClosedImage, this.interactable.windowX, this.interactable.windowY, this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
     } else {
       this.windowClosedImage.resize(0, 0);
       this.windowOpen();
@@ -61,8 +62,8 @@ class Game {
 
   // made separate collision classes for interactacles
   windowCollision(playerInfo) {
-    let windowX = this.interactable.x + this.interactable.windowOpenWidth;
-    let windowY = this.interactable.y + this.interactable.windowOpenHeight;
+    let windowX = this.interactable.windowX + this.interactable.windowOpenWidth;
+    let windowY = this.interactable.windowY + this.interactable.windowOpenHeight;
     // get the middle of the player
     let playerX = playerInfo.x + playerInfo.width / 2;
     let playerY = playerInfo.y + playerInfo.height / 2;
