@@ -6,8 +6,10 @@ class Interactable {
         this.windowOpenHeight = 94;
         this.windowClosedWidth = 74;
         this.windowClosedHeight = 90;
-        this.transparent = [255, 0];
-        this.opaque = [255, 255];
+        this.knifeX = 100;
+        this.knifeY = 100;
+        this.knifeWidth = 15;
+        this.knifeHeight = 40;
     }
     
     openWindowOutsideDisplay() {
@@ -16,5 +18,10 @@ class Interactable {
 
     openWindowFrameDisplay() {
         image(game.windowOpenImageLayer1, this.windowX, this.windowY, this.windowOpenWidth, this.windowOpenHeight);
+    }
+
+    // have knife appear around dresser and press spacebar to grab knife
+    drawKnife() {
+        image(game.knife, this.knifeX, this.knifeY, this.knifeWidth, this.knifeHeight);
     }
 }

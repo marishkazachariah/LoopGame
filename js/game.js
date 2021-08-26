@@ -26,6 +26,7 @@ class Game {
     this.windowOpenImageLayer0 = loadImage('assets/interactables/window-open.png');
     this.windowOpenImageLayer1 = loadImage('assets/interactables/window-open-frame.png');
     this.windowClosedImage = loadImage('assets/interactables/window-closed.png');
+    this.knife = loadImage('assets/interactables/knife.png');
 
     // load music
     this.music = loadSound('assets/music/day-15.mp3');
@@ -56,7 +57,7 @@ class Game {
       this.windowClosedImage.resize(0, 0);
       this.windowOpen();
     }
-    
+
     this.timer.enemyAppear(this.enemy);
   }
 
