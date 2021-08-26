@@ -35,5 +35,8 @@ function keyPressed() {
         game.windowCloseSound.play();
         game.knockingSound.play();
         game.knockingSound.loop();
+        // initially wanted to delay the knocking, but via setTimeout I get this warning/error:
+        // p5.sound.js:1696 SoundFile.play() called after dispose
+        // setTimeout(game.knockingSound.play, 2000); 
     } 
 }

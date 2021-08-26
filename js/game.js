@@ -82,7 +82,13 @@ class Game {
     setTimeout(this.interactable.openWindowFrameDisplay(), 2000);
     this.windowOpenImageLayer1.resize(this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
     this.windowOpenImageLayer0.resize(this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
-  } 
+  }
+  
+  delayKnocking() {
+    //this.knockingSound.play();
+    this.gameOverSound.play();
+    console.log("isknowcking");
+  }
 
   gameOver() {
     this.ui.gameOver();

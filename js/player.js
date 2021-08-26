@@ -13,10 +13,9 @@ class Player {
     if(this.x < 50) {
       this.x = this.x + this.speed;
     }
-    // this one isn't working ;(
-    // if(this.x > 300) {
-    //   this.x = this.x - this.speed;
-    // }
+    if(this.x > 320) {
+      this.x = this.x - this.speed;
+    }
     if(this.y > 323) {
       this.y = this.y - this.speed;
     }
