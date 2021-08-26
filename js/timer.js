@@ -26,7 +26,20 @@ class Timer {
   }
 
   enemyAppear(enemy) {
-    if(this.timer < 110) {
+    if(game.isWindowClosed) {
+      if(this.timer <= 100) {
+        enemy.draw();
+        enemy.enemyCollision(game.player);
+        game.knockingSound.stop();
+        game.isWindowClosed = false;
+        if(this.time === 100) {
+          game.windowOpenSound.play();
+        } else if (this.time <= 98){
+          game.windowOpenSound.stop();
+        }
+      }
+    } else if(this.timer <= 110) {
+      game.windowOpen();
       enemy.draw();
       enemy.enemyCollision(game.player);
     }

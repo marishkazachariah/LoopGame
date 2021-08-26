@@ -32,10 +32,8 @@ function keyPressed() {
     }
     if(keyCode === 32 && game.isWindowTouched) {
         game.isWindowClosed = true;
+        game.windowCloseSound.play();
+        game.knockingSound.play();
+        game.knockingSound.loop();
     } 
 }
-
-// Resizing canvas function
-// function windowResized() { 
-//     resizeCanvas(500, 500);
-// }

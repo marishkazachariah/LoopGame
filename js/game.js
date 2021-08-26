@@ -31,6 +31,9 @@ class Game {
     this.music = loadSound('assets/music/day-15.mp3');
     this.gameOverSound = loadSound('assets/music/game-over-sound.wav');
     this.winSound = loadSound('assets/music/win-sound.wav');
+    this.knockingSound = loadSound('assets/music/door-knock.wav');
+    this.windowCloseSound = loadSound('assets/music/close-window.wav');
+    this.windowOpenSound = loadSound('assets/music/open-window.wav');
   }
 
   setup() {
@@ -51,6 +54,7 @@ class Game {
       this.windowOpenImageLayer1.resize(0,0);
       image(this.windowClosedImage, this.interactable.x, this.interactable.y, this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
     } else {
+      this.windowClosedImage.resize(0, 0);
       this.windowOpen();
     }
   }
@@ -76,8 +80,11 @@ class Game {
     setTimeout(this.interactable.openWindowFrameDisplay(), 2000);
     this.windowOpenImageLayer1.resize(this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
     this.windowOpenImageLayer0.resize(this.interactable.windowOpenWidth, this.interactable.windowOpenHeight);
-    this.windowClosedImage.resize(0, 0);
   } 
+
+  delayWindowOpenSound() {
+
+  }
 
   gameOver() {
     this.ui.gameOver();

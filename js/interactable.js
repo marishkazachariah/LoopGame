@@ -17,8 +17,4 @@ class Interactable {
     openWindowFrameDisplay() {
         image(game.windowOpenImageLayer1, this.x, this.y, this.windowOpenWidth, this.windowOpenHeight);
     }
-
-    // change state of window ...causing the timer of the enemy to enter to delay (also includes change back to window state)
-    // bonus: adding banging window sound?
-
 }
