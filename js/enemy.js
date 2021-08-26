@@ -8,10 +8,8 @@ class Enemy {
     }
 
     draw() {
-        //let bounds = constrain(this.x, 10, 250);
         image(game.enemyImage, this.x, this.y, this.width, this.height);
-        // constrain enemy within game bounds
-        // constrain(this.x, 25, 350);
+
         // follow playable character
         let rotation = atan2(game.player.y - this.y, game.player.x - this.y);
         this.x += cos(rotation) * this.speed;
@@ -28,11 +26,22 @@ class Enemy {
             this.x += cos(rotation) * this.speed;
             this.y += sin(rotation) * this.speed;
         }     
-        // this.collision(game.player);
-        // if (this.collision(game.player) || (this.x + this.width) < 0) {
-        //     return false;
-        // } else {
-        //     return true;
-        // }
     }
+
+    // collide with player character to game over
+    enemyCollision(playerInfo) {
+    let enemyX = this.x + this.width / 1.1;
+    let enemyY = this.y + this.height / 1.1;
+
+    // get the middle of the player
+    let playerX = playerInfo.x + playerInfo.width / 2;
+    let playerY = playerInfo.y + playerInfo.height / 2;
+
+    if (dist(enemyX, enemyY, playerX, playerY) > 25) {
+    } else {
+        // here we have a collision
+        game.gameOver();
+        game.music.stop();
+    }
+  }
 }

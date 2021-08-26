@@ -6,19 +6,19 @@ class Interactable {
         this.windowOpenHeight = 94;
         this.windowClosedWidth = 74;
         this.windowClosedHeight = 90;
+        this.transparent = [255, 0];
+        this.opaque = [255, 255];
     }
-
+    
     openWindowOutsideDisplay() {
-        const windowOpen = image(game.windowOpenImageLayer0, this.x, 15, this.windowOpenWidth, this.windowOpenHeight);
+        image(game.windowOpenImageLayer0, this.x, 15, this.windowOpenWidth, this.windowOpenHeight);
     }
 
     openWindowFrameDisplay() {
-        const windowClosed = image(game.windowOpenImageLayer1, this.x, this.y, this.windowOpenWidth, this.windowOpenHeight);
+        image(game.windowOpenImageLayer1, this.x, this.y, this.windowOpenWidth, this.windowOpenHeight);
     }
 
-    closeWindow() {
-        image(game.windowClosedImage, this.x, this.y, this.windowOpenWidth, this.windowOpenHeight);
-        windowOpen.fill(0, 0, 0, 0);
-        windowClosed.fill(0, 0, 0, 0);
-    }
+    // change state of window ...causing the timer of the enemy to enter to delay (also includes change back to window state)
+    // bonus: adding banging window sound?
+
 }

@@ -26,8 +26,9 @@ class Timer {
   }
 
   enemyAppear(enemy) {
-    if(this.timer <= 118) {
+    if(this.timer < 110) {
       enemy.draw();
+      enemy.enemyCollision(game.player);
     }
   }
 }

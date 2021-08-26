@@ -30,6 +30,9 @@ function keyPressed() {
     if(keyCode === 82) {
         location.reload();
     }
+    if(keyCode === 32 && game.isWindowTouched) {
+        game.isWindowClosed = true;
+    } 
 }
 
 // Resizing canvas function

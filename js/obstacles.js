@@ -50,28 +50,19 @@ class Obstacles {
     rect(this.wallTX, this.wallTY, this.wallTWidth, this.wallTHeight);
     
     // issue: only one of the colliders work
-    // if(game.player.x > this.bookshelfX - this.bookshelfWidth - 35 && game.player.x < this.bookshelfX + this.bookshelfWidth + 35 && game.player.y > this.bookshelfY - this.bookshelfHeight - 35 && game.player.y < this.bookshelfY + this.bookshelfHeight + 35) {
+    // the if statement below is the one that works best
+    // if(game.player.x > this.bookshelfX - this.bookshelfWidth && game.player.x < this.bookshelfX + this.bookshelfWidth && game.player.y > this.bookshelfY - this.bookshelfHeight && game.player.y < this.bookshelfY + this.bookshelfHeight ) {
     //   game.player.speed = game.player.speed * -1; 
     // } else {
     //   game.player.speed = 8;
     // }
-    // if(game.player.x > this.dresserX - this.dresserWidth - 5 && game.player.x < this.dresserX + this.dresserWidth + 5 && game.player.y > this.dresserY - this.dresserHeight - 5 && game.player.y < this.dresserY + this.dresserHeight + 5) {
-    //   game.player.speed = game.player.speed * -1; 
-    // } else {
-    //   game.player.speed = 8;
-    // }
-    // if(game.player.x > this.wallRX - this.wallRWidth - 5 && game.player.x < this.wallRX + this.wallRWidth + 5 && game.player.y > this.wallRY - this.wallRHeight - 5 && game.player.y < this.wallRY + this.wallRHeight + 5) {
-    //   game.player.speed = game.player.speed * -1; 
-    // } else {
-    //   game.player.speed = 8;
-    // }
+  
     // this.collision(game.player, this.bedsideX, this.bedsideY, this.bedsideWidth, this.bedsideY);
     // this.collision(game.player, this.dresserX, this.dresserY, this.dresserWidth, this.dresserHeight);
     // this.collision(game.player, this.bookshelfX, this.bookshelfY, this.bookshelfWidth, this.bookshelfHeight);
     // this.collision(game.player, this.wallRX, this.wallRY, this.wallRWidth, this.wallRHeight);
     // this.collision(game.player, this.wallLX, this.wallLY, this.wallLWidth, this.wallLHeight);
     // this.collision(game.player, this.wallTX, this.wallTY, this.wallTWidth, this.wallTHeight);
-
   }
 
   collision(playerInfo, colX, colY, colWidth, colHeight) {
